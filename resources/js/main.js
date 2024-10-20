@@ -64,6 +64,19 @@ window.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
+  Neutralino.events.on('spawnedProcess', (evt) => {
+    switch(evt.detail.action) {
+        case 'stdOut':
+            console.log(evt.detail.data);
+            break;
+        case 'stdErr':
+            console.error(evt.detail.data);
+            break;
+        case 'exit':
+            console.log(`Ping process terminated with exit code: ${evt.detail.data}`);
+            break;
+    }
+  });
 });
 
 // wait 1s then reload the page
