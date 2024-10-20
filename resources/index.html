@@ -5,22 +5,26 @@
     <title>NeutralinoJs sample app</title>
     <link rel="stylesheet" href="/styles.css">
   </head>
-  <body class="bg-[#1F1F1F] text-slate-100 p-8 w-screen">
-    <h1 class="text-3xl mb-6">🚀 Neutralino Launcher</h1>
+  <body class="bg-[#1F1F1F] text-slate-100 p-8 w-screen min-h-screen flex flex-col space-y-8">
+    <h1 class="text-3xl">🚀 Neutralino Launcher</h1>
 
     <div class="flex flex-wrap justify-center gap-2 mx-auto " id="shortcuts">
-      <div class="hidden w-28 h-28 p-4 rounded-md bg-[#232E2E] border
-        hover:bg-[#2C3A3A] hover:scale-105 transform transition
-        "
-          id="shortcut-template">
-        <div class="shortcut-shortcut text-3xl font-bold text-orange-500 text-left">T</div>
+      <div class="hidden w-28 h-28 p-4 rounded-md border hover:scale-105 transform transition
+        " id="shortcut-template">
+        <div class="shortcut-shortcut text-3xl font-black text-left">T</div>
         <div class="shortcut-name text-left ">Terminal</div>
       </div>
     </div>
+
 <!--
     <div>
       Last pressed keys: <span id="last-pressed-keys"></span>
     </div> -->
+
+    <div class="flex-grow border-red-900"></div>
+
+    <pre class="text-red-300 " id="errors">
+    </pre>
 
     <!-- Neutralino.js client. This file is gitignored,
         because `neu update` typically downloads it.
